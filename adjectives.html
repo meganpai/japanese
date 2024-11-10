@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name=viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon.png" />
+    <link rel="stylesheet" href="style.css">
+    <title>Adjectives</title>
+</head>
+
+<body onLoad="newVocab()" class="adjectives">
+
+    <div class="card" id="vocabCard" onClick="toggleLanguage()">
+        <div class="word-jp" onmouseover="showRomaji()" onmouseout="hideRomaji()"></div>
+        <div class="word-en hidden"></div>
+        <div class="word-romaji"></div>
+    </div>
+    <button onClick="newVocab()" class="random">random / ランダム</button>
+    <button onClick="toggleLanguage()" class="language">a / あ</button>
+   
+   <script>
+        const vocab = [
+            { characters: "たのしい", definition: "enjoyable", romaji: "tanoshii" },
+            { characters: "きたない", definition: "dirty", romaji: "kitanai" },
+            { characters: "ほそい", definition: "thin", romaji: "hosoi" },
+            { characters: "ふとい", definition: "thick", romaji: "futoi" },
+
+        ];
+
+        const vocabCard = document.getElementById('vocabCard');
+        const wordEn = vocabCard.querySelector(".word-en");
+        const wordJp = vocabCard.querySelector(".word-jp");
+        const wordRomaji = vocabCard.querySelector(".word-romaji")
+
+        const newVocab = function () {
+            const num = Math.floor(Math.random() * vocab.length);
+            wordEn.textContent = vocab[num].definition;
+            wordJp.textContent = vocab[num].characters;
+            wordRomaji.textContent = vocab[num].romaji;
+        };
+
+        const toggleLanguage = function () {
+            wordEn.classList.toggle("hidden");
+            wordJp.classList.toggle("hidden");
+            wordRomaji.classList.toggle("hidden");
+        }
+
+        const showRomaji = function () {
+            wordRomaji.classList.add("reveal");
+        }
+        const hideRomaji = function () {
+            wordRomaji.classList.remove("reveal");
+        }
+
+    </script>
+
+</body>
+
+</html>

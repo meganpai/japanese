@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name=viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon.png" />
+    <link rel="stylesheet" href="style.css">
+    <title>People</title>
+</head>
+
+<body onLoad="newVocab()" class="people">
+
+    <div class="card" id="vocabCard" onClick="toggleLanguage()">
+        <div class="word-jp" onmouseover="showRomaji()" onmouseout="hideRomaji()"></div>
+        <div class="word-en hidden"></div>
+        <div class="word-romaji"></div>
+    </div>
+    <button onClick="newVocab()" class="random">random / ランダム</button>
+    <button onClick="toggleLanguage()" class="language">a / あ</button>
+    
+    <script>
+        const vocab = [
+            { characters: "わたし", definition: "I", romaji: "watashi" },
+            { characters: "あなた", definition: "you", romaji: "anata" },
+            { characters: "ともだち", definition: "friend", romaji: "tomodachi"},
+            { characters: "おとこ", definition: "man", romaji: "otoko"},
+            { characters: "おとこのこ", definition: "boy", romaji: "otoko no ko"},
+            { characters: "おとな", definition: "adult", romaji: "otona"},
+            { characters: "ひと", definition: "people", romaji: "hito"},
+
+            { characters: "じん", definition: "...people", romaji: "...jin" },
+
+            { characters: "おかあさん", definition: "mother", romaji: "okaasan" },
+            { characters: "おとうさん", definition: "father", romaji: "otoosan"},
+            { characters: "おねえさん", definition: "older sister", romaji: "oneesan" },
+            { characters: "あね", definition: "older sister", romaji: "ane" },
+            { characters: "おにいさん", definition: "older brother", romaji: "oniisan"},
+            { characters: "いもうとさん", definition: "younger sister", romaji: "imootosan" },
+            { characters: "おとうとさん", definition: "younger brother", romaji: "otootosan" },
+
+        ];
+
+        const vocabCard = document.getElementById('vocabCard');
+        const wordEn = vocabCard.querySelector(".word-en");
+        const wordJp = vocabCard.querySelector(".word-jp");
+        const wordRomaji = vocabCard.querySelector(".word-romaji")
+
+        const newVocab = function () {
+            const num = Math.floor(Math.random() * vocab.length);
+            wordEn.textContent = vocab[num].definition;
+            wordJp.textContent = vocab[num].characters;
+            wordRomaji.textContent = vocab[num].romaji;
+        };
+
+        const toggleLanguage = function () {
+            wordEn.classList.toggle("hidden");
+            wordJp.classList.toggle("hidden");
+            wordRomaji.classList.toggle("hidden");
+        }
+        
+        const showRomaji = function () {
+            wordRomaji.classList.add("reveal");
+        }
+        const hideRomaji = function () {
+            wordRomaji.classList.remove("reveal");
+        }
+    </script>
+
+</body>
+
+</html>

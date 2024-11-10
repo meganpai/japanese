@@ -1,0 +1,62 @@
+        body {
+            margin: 0px;
+            padding: 20vh 30vw;
+        }
+        button.random {
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: solid 1px black;
+            cursor: sw-resize;
+            background: none;
+        }
+        button.language {
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background: none;
+            cursor: ne-resize;
+        }
+        .adjectives {
+            background-color: lightyellow;
+        }
+        .expressions {
+            background-color: mistyrose;
+        }
+        .people {
+            background-color: honeydew;
+        }
+        .card {
+            border: solid 1px black;
+            margin: auto;
+            width: 40vw;
+            height: 50vh;
+            align-content: center;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        #vocabCard {
+            font-family: Serif;
+            font-size: 18px;
+            letter-spacing: .025em;
+            margin: 0px;
+            cursor: help;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .word-romaji {
+            opacity: 0%;
+            padding-top: 10px;
+        }
+        .reveal {
+            opacity: 100%;
+        }
+        .word-en, .word-jp {
+            padding-top: 10px;
+        }
+        .word-jp {
+            font-size: 22px;
+        }
