@@ -1,13 +1,21 @@
+@font-face {
+    font-family: "Noto";
+    src: url(NotoSerifJP-VF.otf);
+}
+
 body {
     margin: 0px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 10vh;
     width: 100vw;
     height: 100vh;
-    font-family: Serif;
+    font-family: "serif";
+    font-size: 16px;
+    letter-spacing: .02em;
 }
 
 .adjectives {
@@ -23,6 +31,7 @@ body {
 }
 
 button.random {
+    font-family: "Noto";
     margin-right: 10px;
     padding: 0px;
     border-radius: 5px;
@@ -47,10 +56,18 @@ button.language {
     background: none;
     cursor: e-resize;
     padding-left: 5px;
+    font-family: "Noto";
+    display: inline-flex;
+    align-items: center;
+}
+
+.english {
+    font-family: "Serif";
+    padding-right: .5em;
 }
 
 button.home {
-    flex-grow: .01;
+    flex-grow: .025;
     text-align: right;
     padding: 10px;
     opacity: 100%;
@@ -70,7 +87,7 @@ button.home {
 }
 
 button.home {
-    border: dashed .5px;
+    border: solid 1px;
 }
 
 button.home:hover {
@@ -78,19 +95,18 @@ button.home:hover {
 }
 
 .card {
-    font-size: 17px;
     border: solid 1px;
     border-radius: 20px;
     text-align: center;
     align-content: center;
-    width: 80%;
+    width: 90%;
     height: 60%;
     cursor: help;
 }
 
 .buttons {
     padding-top: 15px;
-    display: flex;
+    display: inline flex;
     padding-left: 5px;
     padding-right: 5px;
     font-size: 16px;
@@ -106,7 +122,8 @@ button.home:hover {
 }
 
 .word-jp {
-    font-size: 20px;
+    font-size: 22px;
+    font-family: "Noto";
 }
 
 .word-romaji {
@@ -119,6 +136,10 @@ button.home:hover {
 
 /*desktop*/
 @media only screen and (min-width: 685px) {
+    body {
+        justify-content: center;
+        padding-top: 0vh;
+    }
     .card {
         border: solid 1px;
         width: 50%;
