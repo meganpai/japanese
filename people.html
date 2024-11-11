@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name=viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/jpg" href="images/favicon.png" />
-    <link rel="stylesheet" href="reset.css"/>
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css">
     <title>People</title>
 </head>
@@ -17,12 +17,15 @@
         <div class="word-en hidden"></div>
         <div class="word-romaji"></div>
     </div>
-    <button onClick="newVocab()" class="random">random / ランダム</button>
-    <button onClick="toggleLanguage()" class="language">a / あ</button>
-    
+    <div class="buttons">
+        <button onClick="newVocab()" class="random">random / ランダム</button>
+        <button onClick="toggleLanguage()" class="language">a / あ</button>
+        <button onclick="location.href='index.html'" class="home"></button>
+    </div>
+
     <script>
         const vocab = [
-            { characters: "わたし", definition: "I", romaji: "watashi" },
+        { characters: "わたし", definition: "I", romaji: "watashi" },
             { characters: "あなた", definition: "you", romaji: "anata" },
             { characters: "ともだち", definition: "friend", romaji: "tomodachi"},
             { characters: "おとこ", definition: "man", romaji: "otoko"},
@@ -59,13 +62,14 @@
             wordJp.classList.toggle("hidden");
             wordRomaji.classList.toggle("hidden");
         }
-        
+
         const showRomaji = function () {
             wordRomaji.classList.add("reveal");
         }
         const hideRomaji = function () {
             wordRomaji.classList.remove("reveal");
         }
+
     </script>
 
 </body>

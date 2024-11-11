@@ -1,23 +1,12 @@
 body {
     margin: 0px;
-    padding: 20vh 30vw;
-}
-
-button.random {
-    margin-top: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    border: solid 1px black;
-    cursor: sw-resize;
-    background: none;
-}
-
-button.language {
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    background: none;
-    cursor: ne-resize;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 .adjectives {
@@ -32,47 +21,81 @@ button.language {
     background-color: honeydew;
 }
 
+button.random {
+    margin-right: 10px;
+    padding: 0px;
+    border-radius: 5px;
+    border: solid 1px black;
+    cursor: ne-resize;
+    background: none;
+    width: 40%;
+
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+}
+
+button.random:hover {
+    background-color: white;
+}
+
+button.language {
+    border: none;
+    border-radius: 5px;
+    background: none;
+    cursor: e-resize;
+    padding-left: 5px;
+}
+
+button.home {
+    flex-grow: .01;
+    text-align: right;
+    padding: 10px;
+    opacity: 100%;
+    justify-content: flex-end;
+    margin-left: auto;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    cursor: alias;
+
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+
+}
+
+button.home {
+    border: dashed .5px;
+}
+
+button.home:hover {
+    background-color: white;
+}
+
 .card {
-    border: solid 10px black;
-    margin: auto;
-    width: 40vw;
-    height: 50vh;
-    align-content: center;
-    text-align: center;
+    font-size: 17px;
+    border: solid 1px red;
     border-radius: 20px;
-}
-
-@media only screen and (min-width: 600px) {
-    .card {
-        border: solid 1px black;
-        margin: auto;
-        width: 40vw;
-        height: 50vh;
-        align-content: center;
-        text-align: center;
-        border-radius: 20px;
-    }
-}
-
-#vocabCard {
-    font-family: Serif;
-    font-size: 18px;
-    letter-spacing: .025em;
-    margin: 0px;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    height: 70%;
     cursor: help;
+}
+
+.buttons {
+    padding-top: 15px;
+    display: flex;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .hidden {
     display: none;
-}
-
-.word-romaji {
-    opacity: 0%;
-    padding-top: 10px;
-}
-
-.reveal {
-    opacity: 100%;
 }
 
 .word-en,
@@ -81,5 +104,33 @@ button.language {
 }
 
 .word-jp {
-    font-size: 22px;
+    font-size: 20px;
+}
+
+.word-romaji {
+    opacity: 0%;
+}
+
+.reveal {
+    opacity: 100%;
+}
+
+/*desktop*/
+@media only screen and (min-width: 685px) {
+    .card {
+        border: solid 1px;
+        width: 50%;
+        height: 60%;
+    }
+    button.random {
+        width: 45%;
+    }
+}
+
+/*tiny desktop*/
+@media only screen and (max-height: 300px) {
+    .card {
+        border: solid green;
+        height: 60%;
+    }
 }

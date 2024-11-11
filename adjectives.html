@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name=viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/jpg" href="images/favicon.png" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css">
@@ -17,8 +17,11 @@
         <div class="word-en hidden"></div>
         <div class="word-romaji"></div>
     </div>
-    <button onClick="newVocab()" class="random">random / ランダム</button>
-    <button onClick="toggleLanguage()" class="language">a / あ</button>
+    <div class="buttons">
+        <button onClick="newVocab()" class="random">random / ランダム</button>
+        <button onClick="toggleLanguage()" class="language">a / あ</button>
+        <button onclick="location.href='index.html'" class="home adjectives"></button>
+    </div>
 
     <script>
         const vocab = [
