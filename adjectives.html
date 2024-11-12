@@ -17,48 +17,23 @@
         <div class="word-en hidden"></div>
         <div class="word-romaji"></div>
     </div>
+
     <div class="buttons">
-        <button onClick="newVocab()" class="random">ランダム</button>
-        <button onClick="toggleLanguage()" class="language"><div class="english">a</div> / あ</button>
-        <button onclick="location.href='index.html'" class="home"></button>
+        <div class="controls">
+            <button onClick="newVocab()" class="random">ランダム</button>
+            <button onClick="showRomaji()" class="pronunciation">ローマ字</button>
+        </div>
+
+        <div class="controls-2">
+            <button onClick="toggleLanguage()" class="language">
+                <span class="english">a</span> / あ
+            </button>
+            <button onclick="location.href='index.html'" class="home"></button>
+        </div>
     </div>
 
-    <script>
-        const vocab = [
-            { characters: "たのしい", definition: "enjoyable", romaji: "tanoshii" },
-            { characters: "きたない", definition: "dirty", romaji: "kitanai" },
-            { characters: "ほそい", definition: "thin", romaji: "hosoi" },
-            { characters: "ふとい", definition: "thick", romaji: "futoi" },
-
-        ];
-
-        const vocabCard = document.getElementById('vocabCard');
-        const wordEn = vocabCard.querySelector(".word-en");
-        const wordJp = vocabCard.querySelector(".word-jp");
-        const wordRomaji = vocabCard.querySelector(".word-romaji")
-
-        const newVocab = function () {
-            const num = Math.floor(Math.random() * vocab.length);
-            wordEn.textContent = vocab[num].definition;
-            wordJp.textContent = vocab[num].characters;
-            wordRomaji.textContent = vocab[num].romaji;
-        };
-
-        const toggleLanguage = function () {
-            wordEn.classList.toggle("hidden");
-            wordJp.classList.toggle("hidden");
-            wordRomaji.classList.toggle("hidden");
-        }
-
-        const showRomaji = function () {
-            wordRomaji.classList.add("reveal");
-        }
-        const hideRomaji = function () {
-            wordRomaji.classList.remove("reveal");
-        }
-
-    </script>
-
+    <script src="adjectives.js"></script>
+    <script src="card.js"></script>
 </body>
 
 </html>

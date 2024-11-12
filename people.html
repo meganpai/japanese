@@ -17,60 +17,23 @@
         <div class="word-en hidden"></div>
         <div class="word-romaji"></div>
     </div>
+
     <div class="buttons">
-        <button onClick="newVocab()" class="random">ランダム</button>
-        <button onClick="toggleLanguage()" class="language"><div class="english">a</div> / あ</button>
-        <button onclick="location.href='index.html'" class="home"></button>
+        <div class="controls">
+            <button onClick="newVocab()" class="random">ランダム</button>
+            <button onClick="showRomaji()" class="pronunciation">ローマ字</button>
+        </div>
+
+        <div class="controls-2">
+            <button onClick="toggleLanguage()" class="language">
+                <span class="english">a</span> / あ
+            </button>
+            <button onclick="location.href='index.html'" class="home"></button>
+        </div>
     </div>
 
-    <script>
-        const vocab = [
-        { characters: "わたし", definition: "I", romaji: "watashi" },
-            { characters: "あなた", definition: "you", romaji: "anata" },
-            { characters: "ともだち", definition: "friend", romaji: "tomodachi"},
-            { characters: "おとこ", definition: "man", romaji: "otoko"},
-            { characters: "おとこのこ", definition: "boy", romaji: "otoko no ko"},
-            { characters: "おとな", definition: "adult", romaji: "otona"},
-            { characters: "ひと", definition: "people", romaji: "hito"},
-
-            { characters: "じん", definition: "...people", romaji: "...jin" },
-
-            { characters: "おかあさん", definition: "mother", romaji: "okaasan" },
-            { characters: "おとうさん", definition: "father", romaji: "otoosan"},
-            { characters: "おねえさん", definition: "older sister", romaji: "oneesan" },
-            { characters: "あね", definition: "older sister", romaji: "ane" },
-            { characters: "おにいさん", definition: "older brother", romaji: "oniisan"},
-            { characters: "いもうとさん", definition: "younger sister", romaji: "imootosan" },
-            { characters: "おとうとさん", definition: "younger brother", romaji: "otootosan" },
-
-        ];
-
-        const vocabCard = document.getElementById('vocabCard');
-        const wordEn = vocabCard.querySelector(".word-en");
-        const wordJp = vocabCard.querySelector(".word-jp");
-        const wordRomaji = vocabCard.querySelector(".word-romaji")
-
-        const newVocab = function () {
-            const num = Math.floor(Math.random() * vocab.length);
-            wordEn.textContent = vocab[num].definition;
-            wordJp.textContent = vocab[num].characters;
-            wordRomaji.textContent = vocab[num].romaji;
-        };
-
-        const toggleLanguage = function () {
-            wordEn.classList.toggle("hidden");
-            wordJp.classList.toggle("hidden");
-            wordRomaji.classList.toggle("hidden");
-        }
-
-        const showRomaji = function () {
-            wordRomaji.classList.add("reveal");
-        }
-        const hideRomaji = function () {
-            wordRomaji.classList.remove("reveal");
-        }
-
-    </script>
+    <script src="people.js"></script>
+    <script src="card.js"></script>
 
 </body>
 
