@@ -30,15 +30,16 @@ body {
     background-color: honeydew;
 }
 
-button.random {
+button.random, button.pronunciation {
     font-family: "Noto";
+    margin-bottom: 10px;
     margin-right: 10px;
-    padding: 0px;
+    padding: 10px;
     border-radius: 5px;
     border: solid 1px black;
     cursor: e-resize;
     background: none;
-    width: 40%;
+    width: 60px;
 
     -webkit-transition: background-color 2s ease-out;
     -moz-transition: background-color 2s ease-out;
@@ -46,7 +47,7 @@ button.random {
     transition: background-color 2s ease-out;
 }
 
-button.random:hover {
+button.random:hover, button.pronunciation:hover {
     background-color: white;
 }
 
@@ -59,6 +60,7 @@ button.language {
     font-family: "Noto";
     display: inline-flex;
     align-items: center;
+    margin-right: 10px;
 }
 
 .english {
@@ -72,7 +74,6 @@ button.home {
     padding: 10px;
     opacity: 100%;
     justify-content: flex-end;
-    margin-left: auto;
     border-radius: 5px;
     margin-right: 5px;
     margin-top: 2.5px;
@@ -105,11 +106,25 @@ button.home:hover {
 }
 
 .buttons {
-    padding-top: 15px;
+    padding-top: 10px;
     display: inline flex;
     padding-left: 5px;
     padding-right: 5px;
     font-size: 16px;
+}
+
+.controls {
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+}
+
+.controls-2 {
+    width: 66%;
+    display: flex;
+    justify-content: right;
+    align-items: flex-start;
+    padding: 10px;
 }
 
 .hidden {
@@ -145,15 +160,19 @@ button.home:hover {
         width: 50%;
         height: 60%;
     }
-    button.random {
-        width: 45%;
-    }
 }
 
 /*tiny desktop*/
-@media only screen and (max-height: 300px) {
+@media only screen and (max-height: 600px), (max-width: 500px) {
     .card {
         border: solid 1px;
         height: 60%;
+    }
+    .controls {
+        width: 90%;
+    }
+    button.random, button.pronunciation {
+        width: 100%;
+        height: 3em;
     }
 }
