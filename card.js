@@ -17,5 +17,9 @@ const toggleLanguage = function () {
 }
 
 const showRomaji = function () {
-    wordRomaji.classList.toggle("reveal");
+    wordRomaji.classList.add("reveal");
+}
+
+const hideRomaji = function () {
+    wordRomaji.classList.remove("reveal");
 }

@@ -113,14 +113,14 @@ button.home:hover {
     font-size: 16px;
 }
 
-.controls {
-    width: 33%;
+.controls-left {
+    width: 40%;
     display: flex;
     flex-direction: row;
 }
 
-.controls-2 {
-    width: 66%;
+.controls-right {
+    width: 60%;
     display: flex;
     justify-content: right;
     align-items: flex-start;
